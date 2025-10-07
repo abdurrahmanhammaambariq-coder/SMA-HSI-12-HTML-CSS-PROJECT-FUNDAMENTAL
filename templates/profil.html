@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Profil yang baru akan dibuat</h1>
+    
+    <h2>Pertama</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+    <h2>Kedua</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+    <h2>Ketiga</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+    <h2>Keempat</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+
+    <h1>selamat datang {{ user_name }}</h1>
+    <p>{{ user_hobby }} adalah hobi saya dari dulu</p>
+    <p>saya bersekolah di {{ user_school }}</p>
+
+    <a href="/">Kembali ke Home</a>
+</body>
+</html>

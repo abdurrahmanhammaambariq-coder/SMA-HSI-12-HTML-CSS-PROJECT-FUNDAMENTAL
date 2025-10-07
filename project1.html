@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project bisa</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="icon">IPHONE</div>
+            <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav>
+        <button id="tombol-mode"> Dark Mode</button>
+    </nav>
+
+    <!-- main -->
+    <!-- aka -->
+    <main>
+        <section class="aka">
+           <div class="akai">
+            <h1>Headphone Terbaru Di Indonesia</h1>
+            <p>ada fitur canggih yang akan membuat kalian merasa nyaman
+               jika sedang menggunakannya 
+            </p>
+            <button class="aki">Click Here</button>
+           </div> 
+           <div class="img">
+            <img src="img/kocak.jpg" alt="Iphone Headphone">
+           </div>
+        </section>
+        
+        <!-- feature -->
+        <section class="features">
+            <div class="feature">⚡ Cepat</div>
+            <div class="feature">👌 Mudah digunakan</div>
+            <div class="feature">📱 Responsif</div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        &copy;2025 Iphone, Ayo buruan beli !! Keburu Habis
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+    const tombol = document.querySelector("#tombol-mode");
+    tombol.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>

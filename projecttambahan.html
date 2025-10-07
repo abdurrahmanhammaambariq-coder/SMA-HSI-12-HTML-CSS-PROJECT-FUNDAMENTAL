@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevBeats - Headphone untuk Developer</title>
+  <link rel="stylesheet" href="project1-style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">DevBeats</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav>
+    <button id="tombol-mode">🌙 Dark Mode</button>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Headphone DevBeats</h1>
+        <p>Teman terbaikmu untuk fokus coding: noise cancellation, suara jernih, dan mic berkualitas.</p>
+        <button class="cta">Beli Sekarang</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800" alt="DevBeats Headphone" />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <article class="feature">🎧 Noise Cancellation</article>
+      <article class="feature">🎶 Suara Jernih</article>
+      <article class="feature">🎤 Mic untuk Meeting</article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 DevBeats. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const tombol = document.querySelector("#tombol-mode");
+    tombol.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
