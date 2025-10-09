@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukutamu</title>
+</head>
+<body>
+    <h1>Halaman utama</h1>
+    <form action="/teman" method="POST">
+        <label for="nama-user">Nama Anda</label>
+        <input type="text" id="nama-user" name="nama" required />
+        <br><br>
+        
+        <label for="pesan-user">Pesan Anda:</label>
+        <textarea id="pesan-user" name="pesan" required></textarea>
+        <br><br >
+        <button type="submit">Kirim</button>
+
+        {% if nama dan pesan %}
+        <h3>Pesan Terbaru:</h3>
+        <p>"{{ pesan_terbaru }}" <em>{{ nama_terbaru }}</em></p>
+        {% endif %}
+
+    </form>
+
+</body>
+</html>

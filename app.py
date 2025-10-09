@@ -14,7 +14,7 @@
 
 
 # latihan pertama
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -29,10 +29,15 @@ def halaman_profil():
     sekolah_pengguna = "HSI"
     return render_template("profil.html", user_name=nama_penguguna,user_hobby=hobi_pengguna,user_school=sekolah_pengguna)
 
-@app.route("/teman")
+@app.route('/bukutamu',methods=['GET','POST'])
 def halaman_teman():
-    daftar_teman = ['gog','gug','gag']
-    return render_template("teman.html", daftar_teman=daftar_teman )
+    if request.method == 'GET':
+        return render_template('bukutamu.html')
+    if request.method == 'POST':
+        nama = request.form.get('nama')
+        pesan = request.form.get('pesan')
+
+    return render_template('bukutamu.html', nama=nama, pesan=pesan)
 
 
 if __name__ == "__main__":
