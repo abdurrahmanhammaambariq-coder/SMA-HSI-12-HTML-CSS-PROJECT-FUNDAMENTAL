@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukutamu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
-    <h1>Halaman utama</h1>
-    <form action="/teman" method="POST">
+    <h1>Buku Tamu Digital</h1>
+    <!-- bagian form -->
+    <form action="" method="POST">
         <label for="nama-user">Nama Anda</label>
         <input type="text" id="nama-user" name="nama" required />
         <br><br>
@@ -16,13 +19,20 @@
         <textarea id="pesan-user" name="pesan" required></textarea>
         <br><br >
         <button type="submit">Kirim</button>
-
-        {% if nama dan pesan %}
-        <h3>Pesan Terbaru:</h3>
-        <p>"{{ pesan_terbaru }}" <em>{{ nama_terbaru }}</em></p>
-        {% endif %}
-
     </form>
+
+    <!-- bagian pesan masuk -->
+    <h2>Pesan yang Masuk</h2>
+    {% if semua_pesan %}
+        {% for pesan in semua_pesan %}
+            <div class="pesan">
+               <div class="author"> <strong>{{ pesan.nama }}</strong><p>menulis</p></div>
+                <p class="pesan-text">{{ pesan.pesan }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Belum Masuk</p>
+    {% endif %}
 
 </body>
 </html>
