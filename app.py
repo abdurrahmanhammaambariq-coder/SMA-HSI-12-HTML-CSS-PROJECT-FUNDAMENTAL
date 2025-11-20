@@ -14,27 +14,38 @@
 
 
 # latihan pertama
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
-semua_pesan = []  # database sementara
+app.secret_key = 'ini-rahasia-banget-loh'
+
+semua_pesan = []
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
 @app.route('/bukutamu', methods=['GET', 'POST'])
-def halaman_teman():
+def bukutamu():
     global semua_pesan
-    
+ 
     if request.method == 'POST':
-        nama = request.form.get('nama')
-        pesan = request.form.get('pesan')
+        nama = request.form.get("nama","").strip()
+        pesan = request.form.get("pesan","").strip()
+    
+        if nama == 'fulan':
+            flash('Anda tidak diperbolehkan mengirim pesan!', 'failed')
+            return redirect(url_for('buku_tamu'))
 
-        data_baru = {'nama': nama, 'pesan': pesan}
-        semua_pesan.append(data_baru)
+        semua_pesan.append({'nama': nama, 'pesan': pesan})
 
-    return render_template('bukutamu.html', semua_pesan=semua_pesan)
+        flash('Pesan Anda telah berhasil dikirim!', 'success')
+
+        return redirect(url_for('buku_tamu'))
+    return render_template("bukutamu.html",semua_pesan=semua_pesan)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
